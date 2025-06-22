@@ -1,0 +1,172 @@
+.join {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: var(--font-family-primary);
+  direction: rtl;
+}
+
+.join.dark {
+  background-color: #1a1a2e;
+}
+
+.join.light {
+  background-color: #16213e;
+}
+
+/* Background Image */
+.join-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.8) 0%,
+    rgba(22, 33, 62, 0.9) 100%
+  );
+}
+
+/* Content */
+.join-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  width: 100%;
+  max-width: 500px;
+}
+
+.join-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+/* Buttons */
+.join-btn {
+  padding: var(--spacing-lg) var(--spacing-3xl);
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  white-space: nowrap;
+  min-width: 280px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-lg);
+}
+
+.join-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.join-btn:hover::before {
+  transform: scale(1.05);
+}
+
+.join-btn:active {
+  transform: translateY(2px);
+}
+
+/* Primary Button - Baby Blue Gradient */
+.join-primary {
+  background: linear-gradient(135deg, #87CEEB 0%, #5F9EA0 50%, #4682B4 100%);
+  color: #1a1a2e;
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.4);
+}
+
+.join-primary:hover {
+  background: linear-gradient(135deg, #98D8E8 0%, #6BA5A7 50%, #5A8FB8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(135, 206, 235, 0.6);
+}
+
+/* Secondary Button - Indian Red Gradient */
+.join-secondary {
+  background: linear-gradient(135deg, #CD5C5C 0%, #B22222 50%, #8B0000 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(205, 92, 92, 0.4);
+}
+
+.join-secondary:hover {
+  background: linear-gradient(135deg, #DC6C6C 0%, #C23232 50%, #9B1010 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(205, 92, 92, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .join {
+    min-height: 50vh;
+  }
+  
+  .join-content {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+  
+  .join-buttons {
+    gap: var(--spacing-lg);
+  }
+  
+  .join-btn {
+    padding: var(--spacing-base) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+    min-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .join {
+    min-height: 40vh;
+  }
+  
+  .join-content {
+    padding: var(--spacing-xl) var(--spacing-base);
+  }
+  
+  .join-btn {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    min-width: 200px;
+  }
+  
+  .join-buttons {
+    gap: var(--spacing-base);
+  }
+} 

@@ -1,0 +1,97 @@
+import React from 'react';
+import { useTheme } from '../context/ThemeContext';
+import './ProfilePage.css';
+// import profileBgImage from '../images/bg-profile.png';
+import userIconForTitle from '../images/user.7bdee0126bf9ff6341797210b7b70031.svg';
+import profileIcon from '../images/profile.4f0b46ea2f6c3af275655ed738cbb0b3.svg';
+import CircularProgress from '../components/CircularProgress';
+// import userAvatar from '../images/teacher-avatar.jpg';
+
+const mockUser = {
+  name: 'أسامة السيد',
+  email: 'osama@example.com',
+  phone: '123-456-7890',
+};
+
+const ProfilePage = () => {
+  const { isDarkMode } = useTheme();
+
+  return (
+    <div className={`profile-page ${isDarkMode ? 'dark' : ''}`}>
+      {/* Top Section with Background */}
+      <div className="profile-header">
+        <div className="profile-header-overlay"></div>
+       </div>
+
+      {/* Main Content */}
+      <div className="profile-container">
+        {/* Right Sidebar */}
+        <div className="profile-sidebar">
+          <div className="sidebar-item active">ملف المستخدم</div>
+          <div className="sidebar-item">كورساتي</div>
+          <div className="sidebar-item">نتائج الامتحانات</div>
+          <div className="sidebar-item">نتائج الواجب</div>
+        </div>
+
+        {/* Left Content */}
+        <div className="profile-content">
+          <div className="user-profile-section">
+            <div className="section-title-container">
+              <img src={userIconForTitle} alt="user icon" className="section-title-icon" />
+              <h3>ملف المستخدم</h3>
+            </div>
+            <div className="user-details-card">
+              <div className="user-info">
+                          <div className="user-info-details">
+                  <div className="user-info-item">
+                    <svg className="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>{mockUser.name}</span>
+                  </div>
+                  <div className="user-info-item">
+                    <svg className="info-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>{mockUser.email}</span>
+                  </div>
+                  <div className="user-info-item">
+                    <svg className="info-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>{mockUser.phone}</span>
+                  </div>
+                </div>
+                <div className="profile-icon-container">
+                  <img src={profileIcon} alt="Profile Icon" className="main-profile-icon" />
+                </div>
+      
+              </div>
+            </div>
+
+            {/* Course Statistics Section */}
+            <div className="course-stats-section">
+              <div className="section-divider"></div>
+              <h3 className="stats-title">احصاءيات كورساتك</h3>
+              <div className="stats-container">
+                <CircularProgress
+                  percentage={0}
+                  title="عدد الفيديوهات اللي شوفتها"
+                  subtitle="0 فيديو من 0"
+                  color="#22c55e"
+                />
+                <CircularProgress
+                  percentage={0}
+                  title="عدد الاختبارات اللي خلصتها"
+                  subtitle="0 امتحان من 0"
+                  color="#f97316"
+                />
+                <CircularProgress
+                  percentage={0}
+                  title="متوسط النتائج"
+                  color="#3b82f6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProfilePage; 
