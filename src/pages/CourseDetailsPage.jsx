@@ -3,6 +3,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useParams } from 'react-router-dom';
 import CourseCard from '../components/CourseCard';
 import CourseContent from '../components/CourseContent';
+import Footer from '../components/Footer';
 import './CourseDetailsPage.css';
 import course1Image from '../images/suggested-courses1.jpg';
 // import bgProfileImage from '../images/bg-profile.png';
@@ -166,6 +167,7 @@ const CourseDetailsPage = () => {
           <CourseContent />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

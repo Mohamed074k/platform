@@ -49,7 +49,10 @@ const AcademicYears = () => {
     <div className={`academic-years ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="academic-content">
         <div className="academic-title-section">
-          <h2 className="academic-title">السنوات الدراسيه</h2>
+          <div className="academic-title-overlap-container">
+            <span className="academic-title-overlap">السنوات الدراسيه</span>
+            <h2 className="academic-title">السنوات الدراسيه</h2>
+          </div>
         </div>
         <div className="academic-cards">
           {academicYears.map((year) => (
@@ -58,16 +61,12 @@ const AcademicYears = () => {
                 <div className="card-overlap">
                   <span className="overlap-text">{year.overlapText}</span>
                 </div>
+
                 <div className="card-image">
                   <img src={year.image} alt={year.title} />
-                  <div className="card-overlay">
-                    <div className="overlay-content">
-                      <h3 className="overlay-title">{year.title}</h3>
-                      <div className="overlay-line"></div>
-                      <p className="overlay-description">{year.description}</p>
-                    </div>
-                  </div>
+                  
                 </div>
+
               </div>
               <div className="card-info">
                 <h3 className="card-info-title">{year.cardTitle}</h3>

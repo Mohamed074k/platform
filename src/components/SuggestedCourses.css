@@ -22,6 +22,14 @@
   color: var(--color-text-primary);
 }
 
+.suggested-courses.light .courses-title-white {
+  color: #111;
+}
+
+.suggested-courses.dark .courses-title-white {
+  color: #fff;
+}
+
 .courses-content {
   display: flex;
   align-items: center;
@@ -41,11 +49,19 @@
 }
 
 .courses-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 4vw, 1.5rem);
   margin-bottom: var(--spacing-lg);
   color: var(--color-primary);
   font-weight: 700;
   line-height: 1.2;
+}
+
+.courses-title-white {
+  color: #fff;
+}
+
+.courses-title-blue {
+  color: var(--color-primary);
 }
 
 .courses-description {
@@ -257,5 +273,35 @@
   .slide-btn.primary { font-size: 0.85rem; padding: 0.3rem 0.6rem; }
   .courses-swiper .swiper-pagination {
     bottom: -10px;
+  }
+}
+
+/* Lamp icons for Suggested Courses title */
+.lamp-icon {
+  height: 5.5rem;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 1rem;
+}
+.lamp-icon-right {
+  margin-left: 0.7rem;
+}
+.lamp-icon-left {
+  margin-right: 0.7rem;
+  transform: scaleX(-1);
+}
+@media (max-width: 600px) {
+  .lamp-icon {
+    height: 4.5rem;
+    margin: 0 0.3rem;
+  }
+  .lamp-icon-right {
+    margin-left: 0.3rem;
+  }
+  .lamp-icon-left {
+    margin-right: 0.3rem;
+  }
+  .courses-title {
+    font-size: 1.7rem;
   }
 } 

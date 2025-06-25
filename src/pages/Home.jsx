@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Join from '../components/Join';
 import SuggestedCourses from '../components/SuggestedCourses';
 import AcademicYears from '../components/AcademicYears';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Join />
       <SuggestedCourses />
       <AcademicYears />
+      <Footer />
     </>
   );
 };

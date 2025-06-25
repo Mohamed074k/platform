@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import AcademicYearNavbar from '../components/AcademicYearNavbar';
 import SuggestedCourses from '../components/SuggestedCourses';
 import { useTheme } from '../context/ThemeContext';
+import Footer from '../components/Footer';
 import academicYear1Img from '../images/academic-year1.jpg';
 import academicYear2Img from '../images/academic-year2.jpg';
 import academicYear3Img from '../images/academic-year3.jpg';
@@ -126,7 +127,7 @@ const AcademicYearPage = () => {
   const weeklyLectures = allWeeklyLectures[yearId];
 
   // Toggle state for each section
-  const [showAnnual, setShowAnnual] = useState(false);
+  const [showAnnual, setShowAnnual] = useState(true);
   const [showFasl, setShowFasl] = useState(false);
   const [showWeekly, setShowWeekly] = useState(false);
 
@@ -144,7 +145,7 @@ const AcademicYearPage = () => {
       <main className="academic-year-main">
         {/* Welcome Section */}
         <section className="academic-year-welcome-section">
-          <h1 className="academic-year-title">اهلا ({mockUserName})</h1>
+          <h1 className="academic-year-title"> <span className="skewed-name-bg">{mockUserName}</span> اهلا</h1>
           <h2 className="academic-year-subtitle">مرحبا بك في منصه د/محمد ايمن</h2>
           <div className="academic-year-actions">
             <div className="academic-year-desc">للدخول علي اشتراكاتك</div>
@@ -158,7 +159,10 @@ const AcademicYearPage = () => {
         </section>
         {/* Academic Year Courses Section */}
         <section className="academic-year-courses-section">
-          <h2 className="academic-year-main-title">{yearTitle}</h2>
+          <div className="academic-year-main-title-overlap-container">
+            <span className="academic-year-main-title-overlap">{yearTitle}</span>
+            <h2 className="academic-year-main-title">{yearTitle}</h2>
+          </div>
           <h3 className="academic-year-courses-title">احدث الكورسات</h3>
           <button className="toggle-section-btn" onClick={() => setShowAnnual((v) => !v)}>
             <span>{showAnnual ? '▼' : '►'}</span> الكورس السنوي
@@ -255,6 +259,7 @@ const AcademicYearPage = () => {
           )}
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
