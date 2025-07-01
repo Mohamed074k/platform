@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import academicYear1Img from '../images/academic-year1.jpg';
 import academicYear2Img from '../images/academic-year2.jpg';
 import academicYear3Img from '../images/academic-year3.jpg';
+import lampImg from '../images/lamp.png';
 import './AcademicYearPage.css';
 
 // Mock user name (replace with backend data later)
@@ -163,9 +164,16 @@ const AcademicYearPage = () => {
             <span className="academic-year-main-title-overlap">{yearTitle}</span>
             <h2 className="academic-year-main-title">{yearTitle}</h2>
           </div>
-          <h3 className="academic-year-courses-title">احدث الكورسات</h3>
+          <div className="academic-year-courses-title-container">
+            <img src={lampImg} alt="Lamp" className="title-lamp left-lamp" />
+            <h3 className="academic-year-courses-title">احدث الكورسات</h3>
+            <img src={lampImg} alt="Lamp" className="title-lamp right-lamp" />
+          </div>
           <button className="toggle-section-btn" onClick={() => setShowAnnual((v) => !v)}>
-            <span>{showAnnual ? '▼' : '►'}</span> الكورس السنوي
+            <div className="top-line"></div>
+            <span>{showAnnual ? '▼' : '►'}</span> 
+            <span className="second-word">السنوي</span>
+            <span className="first-word">الكورس</span>
           </button>
           {showAnnual && (
             <div className="academic-cards" style={{ justifyContent: 'center' }}>
@@ -197,7 +205,10 @@ const AcademicYearPage = () => {
         {/* Fasl Courses Section */}
         <section className="academic-year-courses-section">
           <button className="toggle-section-btn" onClick={() => setShowFasl((v) => !v)}>
-            <span>{showFasl ? '▼' : '►'}</span> كورسات الفصول
+            <div className="top-line"></div>
+            <span>{showFasl ? '▼' : '►'}</span> 
+            <span className="second-word">الفصول</span>
+            <span className="first-word">كورسات</span>
           </button>
           {showFasl && (
             <div className="academic-cards" style={{ justifyContent: 'center' }}>
@@ -229,7 +240,10 @@ const AcademicYearPage = () => {
         {/* Weekly Lectures Section */}
         <section className="academic-year-courses-section">
           <button className="toggle-section-btn" onClick={() => setShowWeekly((v) => !v)}>
-            <span>{showWeekly ? '▼' : '►'}</span> المحاضرات الاسبوعيه
+            <div className="top-line"></div>
+            <span>{showWeekly ? '▼' : '►'}</span> 
+            <span className="second-word">الاسبوعيه</span>
+            <span className="first-word">المحاضرات</span>
           </button>
           {showWeekly && (
             <div className="academic-cards" style={{ justifyContent: 'center' }}>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { motion } from 'framer-motion';
 import './SuggestedCourses.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
@@ -31,25 +32,90 @@ const slides = [
 
 const SuggestedCourses = () => {
   const { isDarkMode } = useTheme();
+  const swiperRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.autoplay.start();
+    }
+  };
 
   return (
     <div className={`suggested-courses ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="courses-content slider-layout">
         <div className="courses-text">
           <h2 className="courses-title">
-            <img src={bioImg} alt="bio" className="lamp-icon lamp-icon-right" />
+            <motion.img 
+              src={bioImg} 
+              alt="bio" 
+              className="lamp-icon lamp-icon-right"
+              animate={{
+                y: [0, -8, 0],
+                scale: [1, 1.05, 1],
+                filter: [
+                  "brightness(1) hue-rotate(0deg)",
+                  "brightness(1.2) hue-rotate(30deg)",
+                  "brightness(1) hue-rotate(0deg)"
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              whileHover={{
+                scale: 1.3,
+                filter: "brightness(1.5) hue-rotate(60deg)",
+                transition: { duration: 0.4 }
+              }}
+            />
             <span className="courses-title-white">الكورسات</span>
             <span> </span>
             <span className="courses-title-blue">المقترحه</span>
-            <img src={bioImg} alt="bio" className="lamp-icon lamp-icon-left" />
+            <motion.img 
+              src={bioImg} 
+              alt="bio" 
+              className="lamp-icon lamp-icon-left"
+              animate={{
+                y: [0, 8, 0],
+                scale: [1, 1.05, 1],
+                filter: [
+                  "brightness(1) hue-rotate(0deg)",
+                  "brightness(1.2) hue-rotate(-30deg)",
+                  "brightness(1) hue-rotate(0deg)"
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+              whileHover={{
+                scale: 1.3,
+                filter: "brightness(1.5) hue-rotate(-60deg)",
+                transition: { duration: 0.4 }
+              }}
+            />
           </h2>
           <p className="courses-description">
             اكتشف مجموعة متنوعة من الكورسات المميزة في علم الأحياء، مصممة خصيصاً لطلاب الثانوية العامة. 
             كورسات تفاعلية مع شرح مبسط وأمثلة عملية لضمان الفهم الجيد والتحصيل الممتاز.
           </p>
         </div>
-        <div className="courses-slider-container">
+        <div 
+          className="courses-slider-container"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Swiper
+            ref={swiperRef}
             modules={[Navigation, Pagination, A11y, Autoplay]}
             navigation
             pagination={{ clickable: true }}

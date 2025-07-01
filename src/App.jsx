@@ -7,6 +7,7 @@ import Signin from './pages/Signin';
 import AcademicYearPage from './pages/AcademicYearPage';
 import ProfilePage from './pages/ProfilePage';
 import CourseDetailsPage from './pages/CourseDetailsPage';
+import Dashboard from './pages/Dashboard';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
@@ -25,6 +26,7 @@ function AppContent() {
         <Route path="/years/:yearId" element={<AcademicYearPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/course/:courseId" element={<CourseDetailsPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   );
@@ -33,7 +35,7 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename='/platform'>
         <AppContent />
       </Router>
     </ThemeProvider>

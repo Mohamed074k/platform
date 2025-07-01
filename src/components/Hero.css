@@ -34,7 +34,7 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   margin-bottom: var(--spacing-base);
   color: var(--color-primary);
   transition: var(--transition-base);
@@ -42,6 +42,23 @@
   line-height: 1.2;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  /* Stroke text effect */
+  -webkit-text-stroke: 2px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  text-stroke: 2px var(--color-primary);
+  color: transparent;
+}
+
+/* Fallback for browsers that don't support text-stroke */
+@supports not (-webkit-text-stroke: 2px var(--color-primary)) {
+  .hero-content h1 {
+    color: var(--color-primary);
+    text-shadow: 
+      -1px -1px 0 var(--color-primary),
+       1px -1px 0 var(--color-primary),
+      -1px  1px 0 var(--color-primary),
+       1px  1px 0 var(--color-primary);
+  }
 }
 
 .hero-content .batch {
@@ -76,7 +93,7 @@
 }
 
 .hero-image {
-  flex: 0 0 500px;
+  flex: -10 0 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +103,7 @@
 
 .hero-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   height: auto;
   object-fit: contain;
   transition: var(--transition-base);
@@ -104,46 +121,164 @@
   align-items: flex-start;
 }
 
+/* Typing Animation Styles */
+.typing-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--color-primary);
+  margin-right: 2px;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typing-description {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  transition: var(--transition-base);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  min-height: 1.5em;
+  display: inline-block;
+}
+
+/* Dark mode adjustments for typing animation */
+.hero.dark .typing-cursor {
+  background-color: var(--color-primary);
+}
+
+.hero.light .typing-cursor {
+  background-color: var(--color-primary);
+}
+
+/* Animated Button Styles */
 .year-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.9rem 2.5rem;
   border: none;
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s ease;
   color: #fff;
-  box-shadow: var(--box-shadow-md);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
   outline: none;
   min-width: 220px;
   text-align: center;
+  transform: skewX(-5deg);
+  position: relative;
+  overflow: hidden;
 }
 
+.year-btn span {
+  transform: skewX(5deg);
+  transition: all 0.5s ease;
+}
+
+.year-btn .arrow-container {
+  width: 20px;
+  margin-left: 0;
+  position: relative;
+  top: 2px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.year-btn:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.4);
+  transform: skewX(-5deg) translateY(-2px);
+}
+
+.year-btn:hover .arrow-container {
+  transition: 0.5s;
+  margin-left: 20px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* SVG Arrow Animations */
+.year-btn path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.year-btn path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.year-btn:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.year-btn:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.year-btn:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FFD700;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+/* Button Color Variants */
 .year-btn-one {
   background: linear-gradient(90deg, #1fa2ff 0%, #12d8fa 100%);
 }
+
 .year-btn-one:hover {
-  background: transparent;
-  color: #1fa2ff;
-  border: 1px solid #1fa2ff;
+  background: linear-gradient(90deg, #1fa2ff 0%, #12d8fa 100%);
+  box-shadow: 10px 10px 0 #1fa2ff;
 }
 
 .year-btn-two {
   background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
 }
+
 .year-btn-two:hover {
-  background: transparent;
-  color: #f7971e;
-  border: 1px solid #f7971e;
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+  box-shadow: 10px 10px 0 #f7971e;
 }
 
 .year-btn-three {
   background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
 }
+
 .year-btn-three:hover {
-  background: transparent;
-  color: #ff5858;
-  border: 1px solid #ff5858;
+  background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+  box-shadow: 10px 10px 0 #ff5858;
 }
 
 /* Responsive Design */
@@ -183,7 +318,7 @@
   }
   
   .hero-image img {
-    max-width: 350px;
+    min-width: 380px;
     width: 100%;
   }
   

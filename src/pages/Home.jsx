@@ -4,6 +4,7 @@ import Join from '../components/Join';
 import SuggestedCourses from '../components/SuggestedCourses';
 import AcademicYears from '../components/AcademicYears';
 import Footer from '../components/Footer';
+import ScrollArrow from '../components/ScrollArrow';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <SuggestedCourses />
       <AcademicYears />
       <Footer />
+      <ScrollArrow />
     </>
   );
 };

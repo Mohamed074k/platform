@@ -9,29 +9,26 @@ import './AcademicYears.css';
 const academicYears = [
   {
     id: 1,
-    title: 'الصف الأول الثانوي',
-    description: 'منهج شامل يغطي أساسيات علم الأحياء مع التركيز على المفاهيم الأساسية والتجارب العملية',
+     description: 'منهج شامل يغطي أساسيات علم الأحياء مع التركيز على المفاهيم الأساسية والتجارب العملية',
     image: course1Image,
     overlapText: '1',
-    cardTitle: 'أساسيات علم الأحياء',
+    cardTitle: '  الصف الأول الثانوي  ',
     cardDescription: 'تعلم المفاهيم الأساسية في علم الأحياء من خلال دروس تفاعلية وتجارب عملية مذهلة',
   },
   {
     id: 2,
-    title: 'الصف الثاني الثانوي',
-    description: 'تعمق في دراسة الأحياء مع التركيز على الأنظمة البيولوجية والتفاعلات الكيميائية',
+     description: 'تعمق في دراسة الأحياء مع التركيز على الأنظمة البيولوجية والتفاعلات الكيميائية',
     image: course2Image,
     overlapText: '2',
-    cardTitle: 'الأنظمة البيولوجية',
+    cardTitle: '  الصف الثاني الثانوي',
     cardDescription: 'اكتشف تعقيدات الأنظمة البيولوجية وكيفية تفاعل الكائنات الحية مع بيئتها',
   },
   {
     id: 3,
-    title: 'الصف الثالث الثانوي',
-    description: 'تحضير شامل لامتحانات الثانوية العامة مع مراجعة شاملة وتمارين تطبيقية',
+     description: 'تحضير شامل لامتحانات الثانوية العامة مع مراجعة شاملة وتمارين تطبيقية',
     image: course3Image,
     overlapText: '3',
-    cardTitle: 'التحضير للثانوية العامة',
+    cardTitle: ' الصف الثالث الثانوي',
     cardDescription: 'استعد لامتحانات الثانوية العامة بثقة من خلال مراجعة شاملة وتمارين تطبيقية متقدمة',
   },
 ];
@@ -54,23 +51,23 @@ const AcademicYears = () => {
             <h2 className="academic-title">السنوات الدراسيه</h2>
           </div>
         </div>
-        <div className="academic-cards">
+        <div className="academic-cards new-animated-cards">
           {academicYears.map((year) => (
-            <div key={year.id} className="academic-card-container">
-              <div className="academic-card" onClick={() => handleCardClick(year.id)} style={{ cursor: 'pointer' }}>
-                <div className="card-overlap">
-                  <span className="overlap-text">{year.overlapText}</span>
-                </div>
-
-                <div className="card-image">
-                  <img src={year.image} alt={year.title} />
-                  
-                </div>
-
+            <div key={year.id} className="animated-card">
+              <div className="animated-card-circle">
+                {year.overlapText}
               </div>
-              <div className="card-info">
-                <h3 className="card-info-title">{year.cardTitle}</h3>
-                <p className="card-info-description">{year.cardDescription}</p>
+              <div className="animated-card-image">
+                <img src={year.image} alt={year.cardTitle} />
+              </div>
+              <div className="animated-card-details">
+                <div className="animated-card-center">
+                  <h3 className="animated-card-title">{year.cardTitle}</h3>
+                  <p className="animated-card-description">{year.cardDescription}</p>
+                  <button className="animated-card-btn" onClick={() => handleCardClick(year.id)}>
+                    عرض التفاصيل
+                  </button>
+                </div>
               </div>
             </div>
           ))}
