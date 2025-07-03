@@ -8,6 +8,7 @@ import AcademicYearPage from './pages/AcademicYearPage';
 import ProfilePage from './pages/ProfilePage';
 import CourseDetailsPage from './pages/CourseDetailsPage';
 import Dashboard from './pages/Dashboard';
+import CourseContentPage from './pages/CourseContentPage';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
@@ -27,6 +28,7 @@ function AppContent() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/course/:courseId" element={<CourseDetailsPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/course-content/:courseId" element={<CourseContentPage />} />
       </Routes>
     </>
   );

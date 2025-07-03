@@ -347,4 +347,129 @@
   .detail-value {
     font-size: 0.8rem;
   }
+}
+
+.open-lecture-btn, .download-lecture-btn {
+  display: inline-block;
+  margin: 8px 8px 8px 0;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.open-lecture-btn {
+  background: #ffd600;
+  color: #222;
+  border: none;
+}
+.open-lecture-btn:hover {
+  background: #ffe066;
+}
+.download-lecture-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+.download-lecture-btn:hover {
+  background: #444;
+}
+.course-content-section.dark .open-lecture-btn {
+  background: #ffd600;
+  color: #222;
+}
+.course-content-section.dark .download-lecture-btn {
+  background: #fff;
+  color: #222;
+}
+.course-content-section.dark .download-lecture-btn:hover {
+  background: #ffd600;
+  color: #222;
+}
+.lecture-actions {
+  margin: 16px 0 8px 0;
+  display: flex;
+  gap: 12px;
+}
+/* Nested accordion indentation */
+.content-accordion .content-accordion {
+  margin-right: 24px;
+  border-right: 2px solid #eee;
+  padding-right: 12px;
+}
+.course-content-section.dark .content-accordion .content-accordion {
+  border-right: 2px solid #444;
+}
+
+.back-btn {
+  background: #ffd600;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #ffe066;
+}
+.centered-video-content {
+  background: transparent;
+  padding: 32px 24px 24px 24px;
+  border-radius: 16px;
+  box-shadow: none;
+  max-width: 700px;
+  width: 95vw;
+  margin: 40px auto;
+  text-align: center;
+}
+.centered-video-content video,
+.centered-video-content iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.course-content-section.dark .centered-video-content {
+  background: transparent;
+  color: #fff;
+}
+.close-video-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ffd600;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.close-video-btn:hover {
+  background: #ffe066;
+}
+@media (max-width: 600px) {
+  .centered-video-content {
+    padding: 16px 2vw 16px 2vw;
+    max-width: 100vw;
+  }
+  .centered-video-content video,
+  .centered-video-content iframe {
+    max-width: 100vw;
+    width: 100vw;
+    height: 220px;
+    border-radius: 8px;
+  }
 } 

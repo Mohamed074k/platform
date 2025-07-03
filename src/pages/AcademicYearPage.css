@@ -159,19 +159,166 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .academic-year-btn:hover {
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
 }
 
-@media (max-width: 600px) {
-  .academic-year-welcome-section {
-    padding: 2.5rem 0.5rem 2rem 0.5rem;
-    min-height: 260px;
-    /* border-radius: 1.2rem; */
-  }
+.academic-year-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  width: 25%;
+  height: 2px;
+  background: #1f2937;
+  border-radius: 1px;
+  transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.academic-year-btn:hover::before {
+  right: 35%;
+}
+
+.toggle-section-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  margin: 1.2rem 0 1.2rem 0;
+  padding: 0.5rem 1.2rem 1.5rem 1.2rem;
+  border-radius: 8px;
+  direction: ltr;
+  align-self: flex-end;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.toggle-section-btn:focus {
+  outline: none;
+}
+
+.toggle-section-btn:active {
+  outline: none;
+}
+
+.toggle-section-btn::before,
+.toggle-section-btn::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: #1f2937;
+  border-radius: 1px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-section-btn::after {
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-section-btn .top-line {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 2px;
+  background: #1f2937;
+  border-radius: 1px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-section-btn:hover::before {
+  right: 35%;
+}
+
+.toggle-section-btn:hover::after {
+  right: 35%;
+}
+
+.toggle-section-btn:hover .top-line {
+  right: 35%;
+}
+
+.toggle-section-btn .first-word {
+  color: var(--color-primary);
+  transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-section-btn .second-word {
+  color: var(--color-secondary);
+  transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-section-btn:hover .first-word {
+  color: var(--color-secondary);
+}
+
+.toggle-section-btn:hover .second-word {
+  color: var(--color-primary);
+}
+
+.toggle-section-btn span {
+  font-size: 1.2em;
+  margin-left: 0.5rem;
+}
+
+/* Light mode styles */
+.academic-year-page.light .toggle-section-btn::before,
+.academic-year-page.light .toggle-section-btn::after {
+  background: #d1d5db;
+}
+
+.academic-year-page.light .toggle-section-btn .top-line {
+  background: #d1d5db;
+}
+
+.skewed-name-bg {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0.1em 0em;
+}
+.skewed-name-bg::before {
+  content: '';
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  transform: translate(-50%, -50%) skew(-18deg);
+  width: 120%;
+  height: 50%;
+  background: var(--color-primary);
+  opacity: 0.18;
+  border-radius: 0em;
+  transition: height 0.3s cubic-bezier(0.4,0,0.2,1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.academic-year-page.light .skewed-name-bg::before {
+  background: rgb(21, 95, 160);
+  height: 65%;
+}
+
+.academic-year-page.light .academic-year-title {
+  color: #111;
+}
+.academic-year-page.dark .academic-year-title {
+  color: #fff;
 }
 
 .academic-year-main-title-overlap-container {
@@ -386,147 +533,4 @@
   .academic-cards {
     gap: 2rem;
   }
-}
-
-.toggle-section-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  background: none;
-  border: none;
-  color: var(--color-primary);
-  cursor: pointer;
-  margin: 1.2rem 0 1.2rem 0;
-  padding: 0.5rem 1.2rem 1.5rem 1.2rem;
-  border-radius: 8px;
-  direction: ltr;
-  align-self: flex-end;
-  position: relative;
-  overflow: hidden;
-  outline: none;
-}
-
-.toggle-section-btn:focus {
-  outline: none;
-}
-
-.toggle-section-btn:active {
-  outline: none;
-}
-
-.toggle-section-btn::before,
-.toggle-section-btn::after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  background: #1f2937;
-  border-radius: 1px;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn::before {
-  bottom: 8px;
-  right: 0;
-  width: 25%;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn::after {
-  bottom: 0;
-  right: 0;
-  width: 40%;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn .top-line {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35%;
-  height: 2px;
-  background: #1f2937;
-  border-radius: 1px;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn:hover::before {
-  right: 35%;
-}
-
-.toggle-section-btn:hover::after {
-  right: 35%;
-}
-
-.toggle-section-btn:hover .top-line {
-  right: 35%;
-}
-
-.toggle-section-btn .first-word {
-  color: var(--color-primary);
-  transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn .second-word {
-  color: var(--color-secondary);
-  transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-section-btn:hover .first-word {
-  color: var(--color-secondary);
-}
-
-.toggle-section-btn:hover .second-word {
-  color: var(--color-primary);
-}
-
-.toggle-section-btn span {
-  font-size: 1.2em;
-  margin-left: 0.5rem;
-}
-
-/* Light mode styles */
-.academic-year-page.light .toggle-section-btn::before,
-.academic-year-page.light .toggle-section-btn::after {
-  background: #d1d5db;
-}
-
-.academic-year-page.light .toggle-section-btn .top-line {
-  background: #d1d5db;
-}
-
-.skewed-name-bg {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-  padding: 0.1em 0em;
-}
-.skewed-name-bg::before {
-  content: '';
-  position: absolute;
-  top: 90%;
-  left: 40%;
-  transform: translate(-50%, -50%) skew(-18deg);
-  width: 120%;
-  height: 50%;
-  background: var(--color-primary);
-  opacity: 0.18;
-  border-radius: 0em;
-  transition: height 0.3s cubic-bezier(0.4,0,0.2,1);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.academic-year-page.light .skewed-name-bg::before {
-  background: rgb(21, 95, 160);
-  height: 65%;
-}
-
-.academic-year-page.light .academic-year-title {
-  color: #111;
-}
-.academic-year-page.dark .academic-year-title {
-  color: #fff;
 } 

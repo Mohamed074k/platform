@@ -261,7 +261,7 @@
     display: none;
   }
   .signin-form-section {
-    width: 100vw;
+    width: 100%;
     padding: var(--spacing-xs);
   }
 }
