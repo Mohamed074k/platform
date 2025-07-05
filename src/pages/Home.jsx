@@ -5,7 +5,7 @@ import SuggestedCourses from '../components/SuggestedCourses';
 import AcademicYears from '../components/AcademicYears';
 import Footer from '../components/Footer';
 import ScrollArrow from '../components/ScrollArrow';
-import CircularProgress from '../components/CircularProgress';
+import Loader from '../components/Loader';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ const Home = () => {
         top: 0,
         left: 0
       }}>
-        <CircularProgress />
+        <Loader />
       </div>
     );
   }
