@@ -5,7 +5,7 @@ import CourseCard from '../components/CourseCard';
 import CourseContent from '../components/CourseContent';
 import Footer from '../components/Footer';
 import './CourseDetailsPage.css';
-import course1Image from '../images/suggested-courses1.jpg';
+import course1Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_e151c4a5.jpg';
 // import bgProfileImage from '../images/bg-profile.png';
 
 const CourseDetailsPage = () => {

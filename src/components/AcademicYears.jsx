@@ -1,37 +1,34 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import course1Image from '../images/academic-year1.jpg';
-import course2Image from '../images/academic-year2.jpg';
-import course3Image from '../images/academic-year3.jpg';
+import course1Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_e151c4a5.jpg';
+import course2Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_e151c4a5.jpg';
+import course3Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_e151c4a5.jpg';
 import './AcademicYears.css';
 
 const academicYears = [
   {
     id: 1,
-    title: 'الصف الأول الثانوي',
-    description: 'منهج شامل يغطي أساسيات علم الأحياء مع التركيز على المفاهيم الأساسية والتجارب العملية',
+     description: 'منهج شامل يغطي أساسيات علم الأحياء مع التركيز على المفاهيم الأساسية والتجارب العملية',
     image: course1Image,
     overlapText: '1',
-    cardTitle: 'أساسيات علم الأحياء',
+    cardTitle: '  الصف الأول الثانوي  ',
     cardDescription: 'تعلم المفاهيم الأساسية في علم الأحياء من خلال دروس تفاعلية وتجارب عملية مذهلة',
   },
   {
     id: 2,
-    title: 'الصف الثاني الثانوي',
-    description: 'تعمق في دراسة الأحياء مع التركيز على الأنظمة البيولوجية والتفاعلات الكيميائية',
+     description: 'تعمق في دراسة الأحياء مع التركيز على الأنظمة البيولوجية والتفاعلات الكيميائية',
     image: course2Image,
     overlapText: '2',
-    cardTitle: 'الأنظمة البيولوجية',
+    cardTitle: '  الصف الثاني الثانوي',
     cardDescription: 'اكتشف تعقيدات الأنظمة البيولوجية وكيفية تفاعل الكائنات الحية مع بيئتها',
   },
   {
     id: 3,
-    title: 'الصف الثالث الثانوي',
-    description: 'تحضير شامل لامتحانات الثانوية العامة مع مراجعة شاملة وتمارين تطبيقية',
+     description: 'تحضير شامل لامتحانات الثانوية العامة مع مراجعة شاملة وتمارين تطبيقية',
     image: course3Image,
     overlapText: '3',
-    cardTitle: 'التحضير للثانوية العامة',
+    cardTitle: ' الصف الثالث الثانوي',
     cardDescription: 'استعد لامتحانات الثانوية العامة بثقة من خلال مراجعة شاملة وتمارين تطبيقية متقدمة',
   },
 ];

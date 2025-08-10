@@ -136,6 +136,27 @@
   color: var(--color-text-primary);
 }
 
+.signup-page.dark .form-group label {
+  color: #fff;
+}
+
+.signup-page.dark .form-group input,
+.signup-page.dark .form-group select {
+  background: var(--color-background);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.signup-page.dark .form-group input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.signup-page.dark .form-group select option {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
 /* Submit Button */
 .signup-button {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);

@@ -273,4 +273,19 @@
   .signup-link-btn {
     font-size: var(--font-size-sm);
   }
+}
+
+.signin-page.dark .form-group label {
+  color: #fff;
+}
+
+.signin-page.dark .form-group input {
+  background: var(--color-background);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.signin-page.dark .form-group input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
 } 
