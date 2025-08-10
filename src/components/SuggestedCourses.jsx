@@ -7,9 +7,9 @@ import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import courseImg1 from '../images/suggested-courses1.jpg';
-import courseImg2 from '../images/suggested-courses2.jpg';
-import courseImg3 from '../images/suggested-courses3.jpg';
+import courseImg1 from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import courseImg2 from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import courseImg3 from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
 import bioImg from '../images/Bio.d0a62f414cac4e017f94e402fe9643c5.svg';
 
 const slides = [

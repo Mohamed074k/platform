@@ -4,9 +4,9 @@ import AcademicYearNavbar from '../components/AcademicYearNavbar';
 import SuggestedCourses from '../components/SuggestedCourses';
 import { useTheme } from '../context/ThemeContext';
 import Footer from '../components/Footer';
-import academicYear1Img from '../images/academic-year1.jpg';
-import academicYear2Img from '../images/academic-year2.jpg';
-import academicYear3Img from '../images/academic-year3.jpg';
+import academicYear1Img from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import academicYear2Img from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import academicYear3Img from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
 import lampImg from '../images/lamp.png';
 import './AcademicYearPage.css';
 

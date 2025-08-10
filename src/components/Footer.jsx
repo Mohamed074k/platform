@@ -11,7 +11,7 @@ const Footer = () => {
       </div>
       <div className="footer-content">
         <div className="footer-section">
-          <span className="footer-logo">د/محمد ايمن</span>
+          <span className="footer-logo">د/محمد السيد</span>
           <span className="footer-copy">&copy; {new Date().getFullYear()} جميع الحقوق محفوظة</span>
         </div>
         <div className="footer-section footer-links">

@@ -10,6 +10,7 @@ import CourseDetailsPage from './pages/CourseDetailsPage';
 import Dashboard from './pages/Dashboard';
 import CourseContentPage from './pages/CourseContentPage';
 import { ThemeProvider } from './context/ThemeContext';
+import ScrollToTop from "./components/ScrollToTop";
 import './App.css';
 
 function AppContent() {
@@ -20,6 +21,7 @@ function AppContent() {
   return (
     <>
       {(isAcademicYearPage || isCourseDetailsPage) ? <AcademicYearNavbar /> : <Navbar />}
+             <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

@@ -20,7 +20,7 @@ const mockCourses = [
     id: 1,
     name: 'الكورس السنوي - أساسيات الأحياء',
     description: 'منهج شامل يغطي جميع أساسيات علم الأحياء للصف الأول الثانوي مع تدريبات عملية.',
-    image: '../images/academic-year1.jpg',
+    image: '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg',
   },
   {
     id: 2,

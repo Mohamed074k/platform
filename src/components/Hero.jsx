@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import teacherImage from '../images/aymanHomePage.86ad748ab3f3809ad288.png';
+import teacherImage from '../images/Untitled.png';
 import bgStarImage from '../images/bg-star.eec82c35b2f549570895.png';
 import './Hero.css';
 
@@ -54,7 +54,7 @@ const Hero = () => {
       }}
     >
       <div className="hero-content">
-        <h1>د/محمد ايمن</h1>
+        <h1>د/محمد السيد</h1>
         <p className="batch">اهلا دفعة <span>{nextYear}</span></p>
         <p className="description">
           <TypingAnimation 

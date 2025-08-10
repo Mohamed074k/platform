@@ -107,7 +107,7 @@ const AcademicYearNavbar = () => {
         {/* Left: Dark mode toggle and logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <ThemeToggle />
-          <img src={logoImage} alt="الشعار" style={{ height: '38px', width: 'auto', cursor: 'pointer' }} />
+          <img  alt="LOGO" style={{ height: '38px', width: 'auto', cursor: 'pointer' }} />
         </div>
       </nav>
       {/* Scroll Progress Bar */}

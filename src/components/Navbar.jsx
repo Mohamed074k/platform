@@ -73,8 +73,8 @@ const Navbar = () => {
         {/* Logo Container - Center */}
         <div className="logo-container">
           <img 
-            src={logoImage} 
-            alt="الشعار" 
+            // src={logoImage} 
+            alt="LOGO" 
             className="logo-image" 
             onClick={handleLogoClick}
             style={{ cursor: 'pointer' }}

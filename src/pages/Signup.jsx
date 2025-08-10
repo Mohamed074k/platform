@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import './Signup.css';
-import signupImage from '../images/academic-year1.jpg';
+import signupImage from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
 import Footer from '../components/Footer';
 
 const Signup = () => {

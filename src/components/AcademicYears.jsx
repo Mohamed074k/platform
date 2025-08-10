@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import course1Image from '../images/academic-year1.jpg';
-import course2Image from '../images/academic-year2.jpg';
-import course3Image from '../images/academic-year3.jpg';
+import course1Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import course2Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
+import course3Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
 import './AcademicYears.css';
 
 const academicYears = [
@@ -51,23 +51,23 @@ const AcademicYears = () => {
             <h2 className="academic-title">السنوات الدراسيه</h2>
           </div>
         </div>
-        <div className="academic-cards new-animated-cards">
+        <div className="academic-cards">
           {academicYears.map((year) => (
-            <div key={year.id} className="animated-card">
-              <div className="animated-card-circle">
-                {year.overlapText}
-              </div>
-              <div className="animated-card-image">
-                <img src={year.image} alt={year.cardTitle} />
-              </div>
-              <div className="animated-card-details">
-                <div className="animated-card-center">
-                  <h3 className="animated-card-title">{year.cardTitle}</h3>
-                  <p className="animated-card-description">{year.cardDescription}</p>
-                  <button className="animated-card-btn" onClick={() => handleCardClick(year.id)}>
-                    عرض التفاصيل
-                  </button>
+            <div key={year.id} className="academic-card-container">
+              <div className="academic-card" onClick={() => handleCardClick(year.id)} style={{ cursor: 'pointer' }}>
+                <div className="card-overlap">
+                  <span className="overlap-text">{year.overlapText}</span>
                 </div>
+
+                <div className="card-image">
+                  <img src={year.image} alt={year.title} />
+                  
+                </div>
+
+              </div>
+              <div className="card-info">
+                <h3 className="card-info-title">{year.cardTitle}</h3>
+                <p className="card-info-description">{year.cardDescription}</p>
               </div>
             </div>
           ))}

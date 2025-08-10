@@ -5,7 +5,7 @@ import CourseCard from '../components/CourseCard';
 import Footer from '../components/Footer';
 import RealCourseContent from '../components/RealCourseContent';
 import './CourseDetailsPage.css';
-import course1Image from '../images/suggested-courses1.jpg';
+import course1Image from '../images/WhatsApp Image 2025-08-10 at 22.16.51_7de8d6e2.jpg';
 
 const CourseContentPage = () => {
   const { isDarkMode } = useTheme();
