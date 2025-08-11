@@ -146,7 +146,7 @@ const AcademicYearPage = () => {
         {/* Welcome Section */}
         <section className="academic-year-welcome-section">
           <h1 className="academic-year-title"> <span className="skewed-name-bg">{mockUserName}</span> اهلا</h1>
-          <h2 className="academic-year-subtitle">مرحبا بك في منصه د/محمد ايمن</h2>
+          <h2 className="academic-year-subtitle">مرحبا بك في منصه د/محمد السيد</h2>
           <div className="academic-year-actions">
             <div className="academic-year-desc">للدخول علي اشتراكاتك</div>
             <button className="academic-year-btn">اشتراكاتك</button>
