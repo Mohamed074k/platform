@@ -1,0 +1,182 @@
+.theme-demo {
+  padding: var(--spacing-2xl);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+}
+
+.theme-demo h2 {
+  color: var(--color-primary);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.demo-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.demo-section h3 {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--spacing-sm);
+}
+
+/* Color Grid */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-base);
+}
+
+.color-item {
+  padding: var(--spacing-base);
+  border-radius: var(--border-radius-lg);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.color-item.primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.color-item.background {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.color-item.text {
+  background-color: var(--color-text-primary);
+  color: var(--color-background);
+}
+
+/* Typography Demo */
+.typography-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.typography-demo p {
+  margin: 0;
+  padding: var(--spacing-sm);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-base);
+  border-left: 4px solid var(--color-primary);
+}
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+
+/* Spacing Demo */
+.spacing-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.spacing-item {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-base);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+.spacing-item.xs { margin-left: var(--spacing-xs); }
+.spacing-item.sm { margin-left: var(--spacing-sm); }
+.spacing-item.base { margin-left: var(--spacing-base); }
+.spacing-item.lg { margin-left: var(--spacing-lg); }
+
+/* Button Demo */
+.button-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-base);
+}
+
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-base);
+  font-family: var(--font-family-primary);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.btn-success:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.btn-warning {
+  background-color: var(--color-warning);
+  color: black;
+}
+
+.btn-warning:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .theme-demo {
+    padding: var(--spacing-lg);
+  }
+  
+  .color-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-demo {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+} 

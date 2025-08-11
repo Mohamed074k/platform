@@ -1,0 +1,371 @@
+/* General Profile Page Styles */
+.profile-page {
+  direction: rtl;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  /* padding-top: 80px; */ /* Removed to eliminate space between nav and header */
+}
+
+/* Header Section */
+.profile-header {
+  position: relative;
+  background-color: #ffc107; /* Yellow background */
+  background-image: url('../images/bg-profile.png'); /* Use bg-profile image */
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 2rem;
+  text-align: center;
+  color: white;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.profile-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+/* Main Content Layout */
+.profile-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  width: 80%;
+  margin: -5rem auto 2rem auto;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-background);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Sidebar (Right) */
+.profile-sidebar {
+  flex: 0 0 20%;
+  background-color: var(--color-card-background);
+  /* border: 1px solid var(--color-border); */ /* Removed border */
+  border-radius: 10px;
+  padding: 1.5rem;
+  align-self: flex-start; /* Stick to the top */
+}
+
+.sidebar-item {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-item:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.sidebar-item.active {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  border-color: var(--color-primary);
+}
+
+/* Content Area (Left) */
+.profile-content {
+  flex: 1;
+}
+
+.user-profile-section h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title-icon {
+  width: 40px;
+  height: 40px;
+  filter: var(--color-svg-filter);
+}
+
+/* User Details Card */
+.user-details-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 2rem;
+  /* border: 1px solid var(--color-border); */ /* Removed border */
+  background-color: var(--color-card-background);
+  color: var(--color-text-primary);
+}
+
+.user-details-overlay {
+  display: none; /* No longer needed */
+}
+
+.user-info {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-avatar {
+  display: none;
+}
+
+.user-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.user-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.info-icon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-text-primary); /* Use theme variable */
+  /* Fill is not needed for these line icons */
+}
+
+.profile-icon-container {
+  flex-shrink: 0;
+}
+
+.main-profile-icon {
+  width: 100px;
+  height: 100px;
+  filter: var(--color-svg-filter); /* Adapt to theme */
+}
+
+.user-info h4,
+.user-info p {
+  margin: 0;
+}
+
+/* Dark Mode Adjustments */
+.profile-page.dark .profile-header-overlay {
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for dark mode */
+}
+
+.profile-page.dark .profile-sidebar {
+  background-color: #1e293b; /* Darker card background */
+}
+
+.profile-page.dark .profile-container {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .profile-container {
+    flex-direction: column;
+    width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header h2 {
+    font-size: 2.5rem;
+  }
+  .sidebar-item {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  .user-info {
+    flex-direction: column; /* Stack icon and details vertically */
+  }
+  .user-info-details {
+    align-items: center; /* Center-align the text details */
+  }
+}
+
+/* Course Statistics Section */
+.course-stats-section {
+  margin-top: 3rem;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(to left, transparent, var(--color-primary), transparent);
+  margin-bottom: 2rem;
+}
+
+.stats-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-text-primary);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.courses-list-section {
+  margin-top: 2rem;
+}
+
+.courses-list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.course-card-profile-vertical {
+  background: var(--color-surface);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 2px solid var(--color-border);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 240px;
+  max-width: 340px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.course-card-profile-img-vertical {
+  width: 100%;
+  height: 180px;
+  border-radius: 0;
+  object-fit: cover;
+  border: none;
+  margin: 0;
+  display: block;
+}
+
+.course-card-profile-info-vertical {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: center;
+  margin-top: -1.2rem;
+  z-index: 2;
+  border-radius: 0 0 1.2rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.course-card-profile-info-vertical h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.course-card-profile-info-vertical p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.enrolled-btn {
+  background: #e0e7ef;
+  color: #888;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+.go-to-course-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.go-to-course-btn:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .courses-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.no-courses-message {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1.2rem;
+  margin: 3rem auto 2rem auto;
+  font-weight: 600;
+  padding: 2.5rem 0;
+  width: 100%;
+} 

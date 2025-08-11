@@ -1,0 +1,431 @@
+.annual-courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.annual-course-card {
+  position: relative;
+  width: 340px;
+  background: var(--color-surface);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  overflow: visible;
+  text-align: center;
+  margin-bottom: 13rem;
+  transition: box-shadow 0.3s;
+}
+
+.annual-course-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+.academic-section {
+  margin-top: 8rem;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 1.5rem 0 1rem 0;
+  text-align: right;
+  direction: rtl;
+  color: var(--color-secondary);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  /* Animation */
+  opacity: 0;
+  transform: translateX(60px);
+  animation: sectionTitleSlideIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes sectionTitleSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: 2px;
+  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.section-title::before {
+  margin-bottom: 0.7rem;
+}
+.section-title::after {
+  margin-top: 0.7rem;
+}
+.section-title.section-title-animated::before,
+.section-title.section-title-animated::after {
+  width: 15rem;
+}
+
+.section-title .section-title-first {
+  color: var(--color-secondary);
+  transition: color 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.section-title .section-title-second {
+  color: var(--color-primary);
+  transition: color 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.section-title:hover .section-title-first {
+  color: var(--color-primary);
+}
+.section-title:hover .section-title-second {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 600px) {
+  .annual-courses-list {
+    flex-direction: column;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .annual-course-card {
+    margin-bottom: 14rem;
+  }
+  .academic-section {
+    margin-bottom: 6rem;
+  }
+}
+
+.academic-year-welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem 2rem;
+  width: 100%;
+  min-height: 380px;
+  /* border-radius: 2rem; */
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: background 0.3s, color 0.3s;
+}
+
+.academic-year-page.dark .academic-year-welcome-section {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+.academic-year-title {
+  font-size: 4.7rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+}
+
+.academic-year-subtitle {
+  font-size: 1.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.academic-year-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.academic-year-desc, .academic-year-browse {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+}
+
+.academic-year-btn {
+  padding: 0.9rem 4.5rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.academic-year-btn:hover {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+@media (max-width: 600px) {
+  .academic-year-welcome-section {
+    padding: 2.5rem 0.5rem 2rem 0.5rem;
+    min-height: 260px;
+    /* border-radius: 1.2rem; */
+  }
+}
+
+.academic-year-main-title-overlap-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  min-height: 7.5rem;
+}
+
+.academic-year-main-title-overlap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  opacity: 0.08;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.academic-year-main-title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  font-size: clamp(2.8rem, 14vw, 2rem);
+  color: var(--color-primary);
+  font-weight: bold;
+  margin: 2rem auto 1rem auto;
+  display: block;
+}
+
+.academic-year-courses-title {
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--color-secondary);
+  font-weight: bold;
+  margin: 1.5rem auto 1rem auto;
+  display: block;
+}
+
+.academic-year-courses-section {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  padding: 2.5rem 1rem 2rem 1rem;
+  /* border-radius: 2rem; */
+  /* margin: 2rem 0; */
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.academic-year-page.dark .academic-year-courses-section {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+.academic-year-annual-title {
+  text-align: right;
+  direction: rtl;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.academic-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  direction: rtl;
+}
+
+.academic-card-container {
+  flex: 1 1 300px;
+  max-width: 340px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.academic-card-info-box {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-top: -2.2rem;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  border: 2px solid var(--color-border);
+  direction: rtl;
+}
+
+.academic-year-page.dark .academic-card-info-box {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+.academic-card-info-title {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.academic-card-info-desc {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.academic-card-info-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.academic-card-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.academic-card-btn.primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+}
+
+.academic-card-btn.primary:hover {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+.academic-card-btn.secondary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.academic-card-btn.secondary:hover {
+  background: var(--color-secondary);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .academic-card-info-box {
+    padding: 1rem 0.5rem 0.8rem 0.5rem;
+    margin-top: -1.2rem;
+    margin-bottom: 0;
+  }
+  .academic-card-info-title {
+    font-size: 1rem;
+  }
+  .academic-card-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .academic-cards {
+    justify-content: center;
+  }
+  .academic-card-container {
+    flex: 0 0 calc(33.333% - 2rem);
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .academic-card-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .academic-cards {
+    gap: 2rem;
+  }
+}
+
+.toggle-section-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  margin: 1.2rem 0 1.2rem 0;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  direction: ltr;
+  align-self: flex-end;
+}
+.toggle-section-btn:hover {
+  background: var(--color-primary-light, #f0f6ff);
+  color: var(--color-secondary);
+}
+.toggle-section-btn span {
+  font-size: 1.2em;
+  margin-left: 0.5rem;
+}
+
+.skewed-name-bg {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0.1em 0em;
+}
+.skewed-name-bg::before {
+  content: '';
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  transform: translate(-50%, -50%) skew(-18deg);
+  width: 120%;
+  height: 50%;
+  background: var(--color-primary);
+  opacity: 0.18;
+  border-radius: 0em;
+  transition: height 0.3s cubic-bezier(0.4,0,0.2,1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.academic-year-page.light .skewed-name-bg::before {
+  background: rgb(21, 95, 160);
+  height: 65%;
+}
+
+.academic-year-page.light .academic-year-title {
+  color: #111;
+}
+.academic-year-page.dark .academic-year-title {
+  color: #fff;
+} 

@@ -1,0 +1,164 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-full);
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.toggle-track {
+  width: 48px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--border-radius-full);
+  position: relative;
+  transition: var(--transition-base);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.theme-toggle.dark .toggle-track {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.theme-toggle.dark .toggle-thumb {
+  transform: translateX(24px);
+  background: #fbbf24;
+}
+
+.theme-toggle.light .toggle-thumb {
+  transform: translateX(0);
+  background: #ffffff;
+}
+
+.moon-icon,
+.sun-icon {
+  transition: var(--transition-base);
+  color: #1a1a2e;
+}
+
+.theme-toggle.dark .moon-icon {
+  color: #1a1a2e;
+}
+
+.theme-toggle.light .sun-icon {
+  color: #f59e0b;
+}
+
+/* Hover effects */
+.theme-toggle:hover .toggle-track {
+  box-shadow: var(--box-shadow-md);
+}
+
+.theme-toggle:hover .toggle-thumb {
+  box-shadow: var(--box-shadow-md);
+}
+
+/* Focus styles for accessibility */
+.theme-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .toggle-track {
+    width: 44px;
+    height: 22px;
+  }
+
+  .toggle-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .theme-toggle.dark .toggle-thumb {
+    transform: translateX(22px);
+  }
+
+  .moon-icon,
+  .sun-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-track {
+    width: 40px;
+    height: 20px;
+  }
+
+  .toggle-thumb {
+    width: 16px;
+    height: 16px;
+  }
+
+  .theme-toggle.dark .toggle-thumb {
+    transform: translateX(20px);
+  }
+
+  .moon-icon,
+  .sun-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Animation for icon rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-toggle:hover .sun-icon {
+  animation: rotate 0.5s ease-in-out;
+}
+
+/* Pulse animation for dark mode */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.theme-toggle:hover .moon-icon {
+  animation: pulse 0.5s ease-in-out;
+} 
